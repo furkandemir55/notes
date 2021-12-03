@@ -1,0 +1,16 @@
+#cloud-config
+
+hostname: <hostname>
+manage_etc_hosts: true
+
+users:
+  - name: <username>
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    plain_text_passwd: '<password>'
+    groups: sudo
+    home: /home/ubuntu
+    shell: /bin/bash
+    lock_passwd: false
+
+ssh_pwauth: true
+disable_root: true
